@@ -1,2 +1,13 @@
-@import './common';
-@import './example';
+@import "./utils/variables";
+@import "./base/reset";
+@import "./utils/mixins";
+@import "./utils/placeholders";
+@import "./base/common";
+@import "./components/container";
+@import "./components/section";
+@import "./utils/hidden";
+@import "./components/logo";
+@import "./components/button";
+@import "./components/section";
+@import "./layouts/header";
+@import "./layouts/search-form.scss";

@@ -3,12 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <title>Filmoteka home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <!--header-->
+    <header class="header">
+      <div class="container header__inner">
+        <div class="header__top">
+          <ul class="header__list list">
+            <li class="header__list-item">
+              <a href="./index.html" class="header__link link current">home</a>
+            </li>
+            <li class="header__list-item">
+              <a href="#" class="header__link link">my library</a>
+            </li>
+          </ul>
+          <form action="" class="header__form search-form">
+            <label class="search-form__label">
+              <input
+                class="search-form__input"
+                type="text"
+                name="search"
+                placeholder="Movie Search"
+            /></label>
+          </form>
+        </div>
+        <div class="header__title-wrap">
+          <img src="./images/film.png" alt="Filmoteka" width="32" height="32" />
+          <h1 class="header__title">Filmoteka</h1>
+        </div>
+      </div>
+    </header>
+    <!--main-->
+    <main></main>
+    <!--footer-->
+    <footer class="footer"></footer>
   </body>
 </html>
