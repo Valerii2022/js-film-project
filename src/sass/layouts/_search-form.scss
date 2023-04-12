@@ -1,0 +1,37 @@
+.search-form {
+  margin-bottom: 8px;
+  &__input {
+    padding: 10px 14px;
+    width: 165px;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+
+    font-size: 12px;
+    line-height: 1.17;
+    color: var(--primary-text-color);
+    background-color: var(--white-color);
+
+    @media screen and (max-width: 767px) {
+      width: calc(100% - 28px);
+    }
+
+    @include tablet {
+      font-size: 14px;
+      line-height: 1.14;
+      padding: 11px 16px;
+      margin-right: 4px;
+    }
+  }
+
+  &__input::placeholder {
+    color: var(--primary-text-color);
+    font-size: 12px;
+    line-height: 1.17;
+
+    @include tablet {
+      font-size: 14px;
+      line-height: 1.14;
+    }
+  }
+}
