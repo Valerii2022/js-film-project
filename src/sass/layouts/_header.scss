@@ -7,7 +7,6 @@
 
   &__inner {
     height: 460px;
-    padding: 14px 14px 20px 14px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,7 +28,6 @@
     }
 
     @include tablet {
-      padding: 16px;
       height: 222px;
       background-image: url(../images/header768.jpg);
       @include retina {
@@ -38,12 +36,23 @@
     }
 
     @include desktop {
-      padding: 16px 32px 32px 32px;
       height: 316px;
       background-image: url(../images/header1280.jpg);
       @include retina {
         background-image: url(../images/header1280@2x.jpg);
       }
+    }
+  }
+
+  &__main {
+    padding: 14px 14px 0px 14px;
+
+    @include tablet {
+      padding: 16px 16px 0px 16px;
+    }
+
+    @include desktop {
+      padding: 16px 32px 0px 32px;
     }
   }
 
@@ -96,13 +105,29 @@
     padding-left: 14px;
 
     color: var(--white-color);
+
+    @media screen and (min-width: 767px) and (max-width: 1279px) {
+      width: 135px;
+    }
   }
 
   &__title-wrap {
+    padding-bottom: 20px;
     display: flex;
     align-items: center;
+
     @media screen and (max-width: 767px) {
       justify-content: center;
+    }
+
+    @include tablet {
+      padding-bottom: 16px;
+      padding-left: 16px;
+    }
+
+    @include desktop {
+      padding-bottom: 32px;
+      padding-left: 32px;
     }
   }
 

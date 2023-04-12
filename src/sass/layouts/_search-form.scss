@@ -22,6 +22,10 @@
       padding: 11px 16px;
       margin-right: 4px;
     }
+
+    @include desktop {
+      width: 187px;
+    }
   }
 
   &__input::placeholder {
