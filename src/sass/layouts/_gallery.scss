@@ -1,0 +1,76 @@
+.gallery {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   margin-bottom: 40px;
+
+   @include tablet {
+      gap: 32px;
+      margin-bottom: 60px;
+   }
+   @include desktop {
+      gap: 15px;
+   }
+
+   &__item {
+      @include desktop {
+         margin-bottom: 16px;
+      }
+   }
+
+   &__img {
+      margin-bottom: 10px;
+      width: 280px;
+      border-radius: 5px;
+      display: block;
+
+      @include tablet {
+         width: 336px;
+         margin-bottom: 8px;
+      }
+
+      @include desktop {
+         width: 395px;
+         margin-bottom: 12px;
+      }
+   }
+
+   &__name {
+      margin-bottom: 5px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.17;
+      text-transform: uppercase;
+
+      color: var(--primary-text-color);
+
+      @include tablet {
+         margin-bottom: 4px;
+         line-height: 1.33;
+      }
+
+      @include desktop {
+         margin-bottom: 6px;
+         font-size: 20px;
+         line-height: 1.2;
+      }
+   }
+
+   &__info {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.33;
+
+      color: var(--accent-text-color);
+
+      @include desktop {
+         font-size: 20px;
+         line-height: 1.2;
+      }
+   }
+
+   &__genre::after {
+      content: "|";
+      padding: 0 2px;
+   }
+}

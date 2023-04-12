@@ -1,0 +1,47 @@
+.footer {
+   padding: 28px 0;
+   background-color: var(--primary-background-color);
+   color: var(--secondary-text-color);
+
+   font-size: 14px;
+   line-height: 1.14;
+   text-align: center;
+
+   @include tablet {
+      font-size: 16px;
+      line-height: 0.84;
+      padding: 32px 0;
+   }
+
+   &__inner {
+      @include tablet {
+         display: flex;
+         justify-content: center;
+         gap: 2px;
+      }
+   }
+
+   &__text:first-child {
+      margin-bottom: 12px;
+   }
+
+   &__text:first-child span::after {
+      content: "|";
+      padding-left: 2px;
+   }
+
+   &__link {
+      color: var(--secondary-text-color);
+      cursor: pointer;
+   }
+
+   &__link-wrap::before {
+      content: "";
+      padding: 0 15px;
+      width: 14px;
+      height: 14px;
+      background-image: url(../images/heart.png);
+      background-repeat: no-repeat;
+      background-position: center;
+   }
+}

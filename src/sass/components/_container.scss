@@ -1,15 +1,15 @@
 .container {
-  @extend %margin-auto;
+   @extend %margin-auto;
 
-  @include mobile {
-    width: 280px;
-  }
+   @include mobile {
+      width: 280px;
+   }
 
-  @include tablet {
-    width: 704px;
-  }
+   @include tablet {
+      width: 704px;
+   }
 
-  @include desktop {
-    width: 1216px;
-  }
+   @include desktop {
+      width: 1216px;
+   }
 }
