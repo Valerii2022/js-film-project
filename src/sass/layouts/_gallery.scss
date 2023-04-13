@@ -13,24 +13,31 @@
    }
 
    &__item {
+      width: 280px;
+      cursor: pointer;
+
+      @include tablet {
+         width: 336px;
+      }
+
       @include desktop {
+         width: 395px;
          margin-bottom: 16px;
       }
    }
 
    &__img {
+      width: 100%;
       margin-bottom: 10px;
-      width: 280px;
+
       border-radius: 5px;
       display: block;
 
       @include tablet {
-         width: 336px;
          margin-bottom: 8px;
       }
 
       @include desktop {
-         width: 395px;
          margin-bottom: 12px;
       }
    }

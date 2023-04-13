@@ -6,4 +6,8 @@ export const refs = {
   backdrop: document.querySelector('[data-card-modal]'),
   closeModal: document.querySelector('[data-modal-close]'),
   openModal: document.querySelector('[data-modal-open]'),
+  openVideo: document.querySelector('[data-video-open]'),
+  videoModal: document.querySelector('[data-video-modal]'),
+  closeVideo: document.querySelector('[data-video-close]'),
+  modal: document.querySelector('.backdrop__card'),
 };

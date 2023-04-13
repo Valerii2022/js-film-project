@@ -1,198 +1,201 @@
 .backdrop {
-  background: rgba(0, 0, 0, 0.2);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+   background: rgba(0, 0, 0, 0.2);
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
 
-  &__card {
-    @include tablet {
-      display: flex;
-    }
-  }
+   &__card {
+      @include tablet {
+         display: flex;
+      }
+   }
 
-  &__modal {
-    padding-top: 48px;
-    padding-bottom: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-    width: 240px;
-    min-height: 860px;
-    background-color: var(--white-color);
-    position: absolute;
-    top: 80px;
-    left: 50%;
-    transform: translate(-50%, 0);
-
-    @include tablet {
-      padding-top: 40px;
-      padding-bottom: 64px;
-      padding-left: 40px;
-      padding-right: 40px;
-      width: 624px;
-      min-height: 448px;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    @include desktop {
-      width: 806px;
-      min-height: 478px;
+   &__modal {
+      padding-top: 48px;
       padding-bottom: 40px;
-      padding-left: 12px;
-      padding-right: 12px;
-    }
-  }
+      padding-left: 20px;
+      padding-right: 20px;
+      width: 240px;
+      min-height: 860px;
+      background-color: var(--white-color);
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translate(-50%, 0);
 
-  &__close-icon {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-  }
+      @include tablet {
+         padding-top: 40px;
+         padding-bottom: 64px;
+         padding-left: 40px;
+         padding-right: 40px;
+         width: 624px;
+         min-height: 448px;
+         top: 50%;
+         transform: translate(-50%, -50%);
+      }
 
-  &__film-preview {
-    display: block;
+      @include desktop {
+         width: 806px;
+         min-height: 478px;
+         padding-bottom: 40px;
+         padding-left: 12px;
+         padding-right: 12px;
+      }
+   }
 
-    @include tablet {
-      margin-right: 68px;
-      width: 264px;
-      height: 375px;
-    }
+   &__close-icon {
+      cursor: pointer;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+   }
 
-    @include desktop {
-      margin-right: 16px;
-      width: 375px;
-      height: 478px;
-    }
-  }
+   &__film-preview {
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
 
-  &__title {
-    margin-bottom: 20px;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.15;
+      @include tablet {
+         margin-right: 68px;
+         width: 264px;
+         height: 375px;
+      }
 
-    color: var(--primary-text-color);
+      @include desktop {
+         margin-right: 16px;
+         width: 375px;
+         height: 478px;
+      }
+   }
 
-    @media screen and (max-width: 767px) {
-      margin-top: 20px;
-    }
-  }
+   &__title {
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.15;
 
-  &__film-info {
-    display: flex;
-    margin-bottom: 12px;
-  }
+      color: var(--primary-text-color);
 
-  &__property-list {
-    width: calc(100% / 2);
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
+      @media screen and (max-width: 767px) {
+         margin-top: 20px;
+      }
+   }
 
-    color: #8c8c8c;
-  }
+   &__film-info {
+      display: flex;
+      margin-bottom: 12px;
+   }
 
-  &__property-item {
-    margin-bottom: 8px;
-  }
+   &__property-list {
+      width: calc(100% / 2);
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.33;
 
-  &__value-list {
-    width: calc(100% / 2);
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
+      color: #8c8c8c;
+   }
 
-    color: var(--primary-text-color);
-  }
+   &__property-item {
+      margin-bottom: 8px;
+   }
 
-  &__value-item {
-    margin-bottom: 8px;
-  }
+   &__value-list {
+      width: calc(100% / 2);
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.33;
 
-  &__value-item span {
-    border-radius: 5px;
-    padding: 1px 10px;
-    color: var(--white-color);
-    background-color: var(--accent-text-color);
-  }
+      color: var(--primary-text-color);
+   }
 
-  &__subtitle {
-    margin-bottom: 8px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
-    text-transform: uppercase;
+   &__value-item {
+      margin-bottom: 8px;
+   }
 
-    color: var(--primary-text-color);
-  }
+   &__value-item span {
+      border-radius: 5px;
+      padding: 1px 10px;
+      color: var(--white-color);
+      background-color: var(--accent-text-color);
+   }
 
-  &__description {
-    margin-bottom: 20px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.67;
+   &__subtitle {
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.33;
+      text-transform: uppercase;
 
-    color: var(--primary-text-color);
+      color: var(--primary-text-color);
+   }
 
-    @include tablet {
-      width: 270px;
-    }
+   &__description {
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.67;
 
-    @include desktop {
-      width: 391px;
-    }
-  }
+      color: var(--primary-text-color);
 
-  &__list {
-    display: flex;
-    justify-content: space-between;
-    gap: 4px;
+      @include tablet {
+         width: 270px;
+      }
 
-    @include tablet {
-      gap: 8px;
-    }
+      @include desktop {
+         width: 391px;
+      }
+   }
 
-    @include desktop {
-      justify-content: start;
-    }
-  }
+   &__list {
+      display: flex;
+      justify-content: space-between;
+      gap: 4px;
 
-  &__item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+      @include tablet {
+         gap: 8px;
+      }
 
-    overflow: hidden;
-  }
+      @include desktop {
+         justify-content: start;
+      }
+   }
 
-  &__btn {
-    padding: 10px 8px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.17;
-    text-transform: uppercase;
-    border: 1px solid var(--primary-text-color);
-    outline: none;
-    border-radius: 100px;
-    background-color: var(--white-color);
-    color: var(--accent-text-color);
+   &__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    @include tablet {
-      padding: 12px 18px;
-    }
+      overflow: hidden;
+   }
 
-    @include desktop {
-      padding: 14px 32px;
-    }
-  }
+   &__btn {
+      padding: 10px 8px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.17;
+      text-transform: uppercase;
+      border: 1px solid var(--primary-text-color);
+      outline: none;
+      border-radius: 100px;
+      background-color: var(--white-color);
+      color: var(--accent-text-color);
 
-  &__btn:hover,
-  &__btn:focus {
-    color: var(--white-color);
-    background-color: var(--accent-text-color);
-    border: none;
-  }
+      @include tablet {
+         padding: 12px 18px;
+      }
+
+      @include desktop {
+         padding: 14px 32px;
+      }
+   }
+
+   &__btn:hover,
+   &__btn:focus {
+      color: var(--white-color);
+      background-color: var(--accent-text-color);
+      border: none;
+   }
 }

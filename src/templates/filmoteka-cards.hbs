@@ -1,39 +1,13 @@
 {{#each this}}
 
-  <li class='gallery__item' data-modal-open>
-    <picture>
-      <source
-        srcset='
-                  ./images/gallery1280.jpg    1x,
-                  ./images/gallery1280@2x.jpg 2x
-                '
-        media='(min-width: 1280px)'
-      />
-      <source
-        srcset='
-                  ./images/gallery768.jpg    1x,
-                  ./images/gallery768@2x.jpg 2x
-                '
-        media='(min-width: 768px)'
-      />
-      <source
-        srcset='
-                  ./images/gallery320.jpg    1x,
-                  ./images/gallery320@2x.jpg 2x
-                '
-        media='(max-width: 767px)'
-      />
-      <img
-        class='gallery__img'
-        src='./images/gallery320.jpg'
-        alt=''
-        width='280'
-      />
-    </picture>
-    <p class='gallery__name'>GREYHOUND</p>
-    <p class='gallery__info'>
-      <span class='gallery__genre'>Drama, Action</span><span>2020</span>
-    </p>
-  </li>
+<li id="{{this.id}}" class="gallery__item">
+   <img  class="gallery__img" src="https://image.tmdb.org/t/p/w500{{this.poster_path}}" alt="" width="280" />
+   <p class="gallery__name">{{this.title}}</p>
+   <p class="gallery__info">
+      <span class="gallery__genre">{{this.genre_ids}}</span>
+      <span>{{this.release_date}}</span>
+   </p>
+   
+</li>
 
 {{/each}}
