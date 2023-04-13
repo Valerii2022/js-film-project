@@ -1,0 +1,2 @@
+[document.querySelector("[data-input-search]"),document.querySelector("[data-watched]"),document.querySelector("[data-queue]"),document.querySelector("[data-students-open]"),document.querySelector("[data-card-modal]"),document.querySelector("[data-modal-close]"),document.querySelector("[data-modal-open]")][1].addEventListener("click",(function(){console.log("ok")}));
+//# sourceMappingURL=library.e8f1ee34.js.map
