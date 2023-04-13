@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./sass/index.scss" />
+    <script type="module" src="./js/home.js"></script>
   </head>
   <body>
     <!--header-->
@@ -20,12 +21,18 @@
           <div class="header__top">
             <ul class="header__list list btn-list">
               <li class="btn-list__list-item">
-                <a href="./index.html" class="btn-list__link link current"
+                <a
+                  href="./index.html"
+                  class="btn-list__link link current"
+                  data-home-page
                   >home</a
                 >
               </li>
               <li class="btn-list__list-item">
-                <a href="./library.html" class="btn-list__link link"
+                <a
+                  href="./library.html"
+                  class="btn-list__link link"
+                  data-library-page
                   >my library</a
                 >
               </li>
@@ -37,6 +44,7 @@
                   type="text"
                   name="search"
                   placeholder="Movie Search"
+                  data-input-search
               /></label>
               <img
                 class="header__search-icon"
@@ -70,67 +78,211 @@
     <main>
       <div class="container">
         <ul class="gallery list">
-          <li class="gallery__item">
-            <img
-              class="gallery__img"
-              src="./images/gallery-tamplate.jpg"
-              alt="film preview"
-            />
+          <li class="gallery__item" data-modal-open>
+            <picture>
+              <source
+                srcset="
+                  ./images/gallery1280.jpg    1x,
+                  ./images/gallery1280@2x.jpg 2x
+                "
+                media="(min-width: 1280px)"
+              />
+              <source
+                srcset="
+                  ./images/gallery768.jpg    1x,
+                  ./images/gallery768@2x.jpg 2x
+                "
+                media="(min-width: 768px)"
+              />
+              <source
+                srcset="
+                  ./images/gallery320.jpg    1x,
+                  ./images/gallery320@2x.jpg 2x
+                "
+                media="(max-width: 767px)"
+              />
+              <img
+                class="gallery__img"
+                src="./images/gallery320.jpg"
+                alt=""
+                width="280"
+              />
+            </picture>
             <p class="gallery__name">GREYHOUND</p>
             <p class="gallery__info">
               <span class="gallery__genre">Drama, Action</span><span>2020</span>
             </p>
           </li>
           <li class="gallery__item">
-            <img
-              class="gallery__img"
-              src="./images/gallery-tamplate.jpg"
-              alt="film preview"
-            />
+            <picture>
+              <source
+                srcset="
+                  ./images/gallery1280.jpg    1x,
+                  ./images/gallery1280@2x.jpg 2x
+                "
+                media="(min-width: 1280px)"
+              />
+              <source
+                srcset="
+                  ./images/gallery768.jpg    1x,
+                  ./images/gallery768@2x.jpg 2x
+                "
+                media="(min-width: 768px)"
+              />
+              <source
+                srcset="
+                  ./images/gallery320.jpg    1x,
+                  ./images/gallery320@2x.jpg 2x
+                "
+                media="(max-width: 767px)"
+              />
+              <img
+                class="gallery__img"
+                src="./images/gallery320.jpg"
+                alt=""
+                width="280"
+              />
+            </picture>
             <p class="gallery__name">GREYHOUND</p>
             <p class="gallery__info">
               <span class="gallery__genre">Drama, Action</span><span>2020</span>
             </p>
           </li>
           <li class="gallery__item">
-            <img
-              class="gallery__img"
-              src="./images/gallery-tamplate.jpg"
-              alt="film preview"
-            />
+            <picture>
+              <source
+                srcset="
+                  ./images/gallery1280.jpg    1x,
+                  ./images/gallery1280@2x.jpg 2x
+                "
+                media="(min-width: 1280px)"
+              />
+              <source
+                srcset="
+                  ./images/gallery768.jpg    1x,
+                  ./images/gallery768@2x.jpg 2x
+                "
+                media="(min-width: 768px)"
+              />
+              <source
+                srcset="
+                  ./images/gallery320.jpg    1x,
+                  ./images/gallery320@2x.jpg 2x
+                "
+                media="(max-width: 767px)"
+              />
+              <img
+                class="gallery__img"
+                src="./images/gallery320.jpg"
+                alt=""
+                width="280"
+              />
+            </picture>
             <p class="gallery__name">GREYHOUND</p>
             <p class="gallery__info">
               <span class="gallery__genre">Drama, Action</span><span>2020</span>
             </p>
           </li>
           <li class="gallery__item">
-            <img
-              class="gallery__img"
-              src="./images/gallery-tamplate.jpg"
-              alt="film preview"
-            />
+            <picture>
+              <source
+                srcset="
+                  ./images/gallery1280.jpg    1x,
+                  ./images/gallery1280@2x.jpg 2x
+                "
+                media="(min-width: 1280px)"
+              />
+              <source
+                srcset="
+                  ./images/gallery768.jpg    1x,
+                  ./images/gallery768@2x.jpg 2x
+                "
+                media="(min-width: 768px)"
+              />
+              <source
+                srcset="
+                  ./images/gallery320.jpg    1x,
+                  ./images/gallery320@2x.jpg 2x
+                "
+                media="(max-width: 767px)"
+              />
+              <img
+                class="gallery__img"
+                src="./images/gallery320.jpg"
+                alt=""
+                width="280"
+              />
+            </picture>
             <p class="gallery__name">GREYHOUND</p>
             <p class="gallery__info">
               <span class="gallery__genre">Drama, Action</span><span>2020</span>
             </p>
           </li>
           <li class="gallery__item">
-            <img
-              class="gallery__img"
-              src="./images/gallery-tamplate.jpg"
-              alt="film preview"
-            />
+            <picture>
+              <source
+                srcset="
+                  ./images/gallery1280.jpg    1x,
+                  ./images/gallery1280@2x.jpg 2x
+                "
+                media="(min-width: 1280px)"
+              />
+              <source
+                srcset="
+                  ./images/gallery768.jpg    1x,
+                  ./images/gallery768@2x.jpg 2x
+                "
+                media="(min-width: 768px)"
+              />
+              <source
+                srcset="
+                  ./images/gallery320.jpg    1x,
+                  ./images/gallery320@2x.jpg 2x
+                "
+                media="(max-width: 767px)"
+              />
+              <img
+                class="gallery__img"
+                src="./images/gallery320.jpg"
+                alt=""
+                width="280"
+              />
+            </picture>
             <p class="gallery__name">GREYHOUND</p>
             <p class="gallery__info">
               <span class="gallery__genre">Drama, Action</span><span>2020</span>
             </p>
           </li>
           <li class="gallery__item">
-            <img
-              class="gallery__img"
-              src="./images/gallery-tamplate.jpg"
-              alt="film preview"
-            />
+            <picture>
+              <source
+                srcset="
+                  ./images/gallery1280.jpg    1x,
+                  ./images/gallery1280@2x.jpg 2x
+                "
+                media="(min-width: 1280px)"
+              />
+              <source
+                srcset="
+                  ./images/gallery768.jpg    1x,
+                  ./images/gallery768@2x.jpg 2x
+                "
+                media="(min-width: 768px)"
+              />
+              <source
+                srcset="
+                  ./images/gallery320.jpg    1x,
+                  ./images/gallery320@2x.jpg 2x
+                "
+                media="(max-width: 767px)"
+              />
+              <img
+                class="gallery__img"
+                src="./images/gallery320.jpg"
+                alt=""
+                width="280"
+              />
+            </picture>
             <p class="gallery__name">GREYHOUND</p>
             <p class="gallery__info">
               <span class="gallery__genre">Drama, Action</span><span>2020</span>
@@ -148,10 +300,87 @@
         <p class="footer__text">
           <span>Developed with</span
           ><span class="footer__link-wrap"
-            >by <a class="footer__link" href="#">GoIT Students</a></span
+            >by
+            <a class="footer__link" href="#" data-students-open
+              >GoIT Students</a
+            ></span
           >
         </p>
       </div>
     </footer>
+    <!-- modal -->
+    <div class="backdrop hidden">
+      <div class="backdrop__modal">
+        <div class="backdrop__card">
+          <img
+            class="backdrop__close-icon"
+            src="./images/close.svg"
+            alt=""
+            width="30"
+            height="30"
+          />
+          <picture>
+            <source
+              srcset="./images/modal1280.jpg 1x, ./images/modal1280@2x.jpg 2x"
+              media="(min-width: 1280px)"
+            />
+            <source
+              srcset="./images/modal768.jpg 1x, ./images/modal768@2x.jpg 2x"
+              media="(min-width: 768px)"
+            />
+            <source
+              srcset="./images/modal320.jpg 1x, ./images/modal320@2x.jpg 2x"
+              media="(max-width: 767px)"
+            />
+            <img
+              class="backdrop__film-preview"
+              src="./images/modal320.jpg"
+              alt="Ігор Дем'яненко"
+              width="240"
+            />
+          </picture>
+          <div class="backdrop__content">
+            <h2 class="backdrop__title">A FISTFUL OF LEAD</h2>
+            <div class="backdrop__film-info">
+              <ul class="backdrop__property-list list">
+                <li class="backdrop__property-item">Vote / Votes</li>
+                <li class="backdrop__property-item">Popularity</li>
+                <li class="backdrop__property-item">Original Title</li>
+                <li class="backdrop__property-item">Genre</li>
+              </ul>
+              <ul class="backdrop__value-list list">
+                <li class="backdrop__value-item"><span>7.3</span> / 1260</li>
+                <li class="backdrop__value-item">100.2</li>
+                <li class="backdrop__value-item">A FISTFUL OF LEAD</li>
+                <li class="backdrop__value-item">Western</li>
+              </ul>
+            </div>
+            <h3 class="backdrop__subtitle">About</h3>
+            <p class="backdrop__description">
+              Four of the West’s most infamous outlaws assemble to steal a huge
+              stash of gold from the most corrupt settlement of the gold rush
+              towns. But not all goes to plan one is killed and the other three
+              escapes with bags of gold hide out in the abandoned gold mine
+              where they happen across another gang of three – who themselves
+              were planning to hit the very same bank! As tensions rise, things
+              go from bad to worse as they realise the bags of gold are filled
+              with lead... they’ve been double crossed – but by who and how?
+            </p>
+            <ul class="backdrop__list">
+              <li class="backdrop__item">
+                <button type="button" class="backdrop__btn">
+                  add to Watched
+                </button>
+              </li>
+              <li class="backdrop__item">
+                <button type="button" class="backdrop__btn">
+                  add to queue
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
