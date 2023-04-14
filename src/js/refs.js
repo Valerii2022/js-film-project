@@ -7,7 +7,11 @@ export const refs = {
   closeModal: document.querySelector('[data-modal-close]'),
   openModal: document.querySelector('[data-modal-open]'),
   openVideo: document.querySelector('[data-video-open]'),
+  openTrailer: document.querySelector('[data-trailer]'),
   videoModal: document.querySelector('[data-video-modal]'),
+  trailerWrap: document.querySelector('.trailer__inner'),
   closeVideo: document.querySelector('[data-video-close]'),
   modal: document.querySelector('.backdrop__card'),
+  watched: document.querySelector('[data-watched-btn]'),
+  queue: document.querySelector('[data-queue-btn]'),
 };

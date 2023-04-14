@@ -36,10 +36,10 @@ export class ThemoviedbAPI {
     }
   }
 
-  async fetchFilmVideo() {
+  async fetchFilmVideo(id) {
     try {
       return await axios.get(
-        `${this.#BASE_API}/3/movie/594767/videos?api_key=${
+        `${this.#BASE_API}/3/movie/${id}/videos?api_key=${
           this.#API_KEY
         }&language=en-US`
       );

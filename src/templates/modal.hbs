@@ -1,10 +1,10 @@
 <img
-    class='backdrop__film-preview'
-    src='https://image.tmdb.org/t/p/w500{{this.poster_path}}'
-    alt=""
-    width='240'
-    data-video-open
-  />
+  class='backdrop__film-preview'
+  src='https://image.tmdb.org/t/p/w500{{this.poster_path}}'
+  alt=''
+  width='240'
+  data-video-open
+/>
 <div class='backdrop__content'>
   <h2 class='backdrop__title'>{{this.title}}</h2>
   <div class='backdrop__film-info'>
@@ -15,7 +15,9 @@
       <li class='backdrop__property-item'>Genre</li>
     </ul>
     <ul class='backdrop__value-list list'>
-      <li class='backdrop__value-item'><span>{{this.vote_average}}</span> / {{vote_count}}</li>
+      <li class='backdrop__value-item'><span>{{this.vote_average}}</span>
+        /
+        {{vote_count}}</li>
       <li class='backdrop__value-item'>{{this.popularity}}</li>
       <li class='backdrop__value-item'>{{this.title}}</li>
       <li class='backdrop__value-item'>{{this.genres}}</li>
@@ -27,15 +29,14 @@
   </p>
   <ul class='backdrop__list'>
     <li class='backdrop__item'>
-      <button type='button' class='backdrop__btn'>
+      <button type='button' class='backdrop__btn' data-watched-btn>
         add to Watched
       </button>
     </li>
     <li class='backdrop__item'>
-      <button type='button' class='backdrop__btn'>
+      <button type='button' class='backdrop__btn' data-queue-btn>
         add to queue
       </button>
     </li>
   </ul>
-  </div>
-
+</div>

@@ -1,12 +1,18 @@
 import filmCardTemplate from '../templates/filmoteka-cards.hbs';
 import modalTemplate from '../templates/modal.hbs';
+import trailerTemplate from '../templates/trailer.hbs';
 import { refs } from './refs';
 import { ThemoviedbAPI } from './API';
 
 const theMovieDbAPI = new ThemoviedbAPI();
 
 refs.openModal.addEventListener('click', handleCardsClick);
+
 window.addEventListener('load', handleLoadPage);
+
+let populareFilms = {};
+let searchFilm = {};
+let filmId;
 
 async function handleLoadPage() {
   try {
@@ -23,7 +29,7 @@ async function handleCardsClick(evt) {
   if (evt.target.nodeName !== 'UL') {
     refs.backdrop.classList.toggle('hidden');
 
-    const filmId = evt.target.parentElement.id;
+    filmId = evt.target.parentElement.id;
 
     try {
       const { data } = await theMovieDbAPI.fetchFullFilmInfo(filmId);
@@ -33,6 +39,7 @@ async function handleCardsClick(evt) {
     }
 
     refs.closeModal.addEventListener('click', handleModalCloseBtnClick);
+    refs.openTrailer.addEventListener('click', handleTrailerOpenBtnClick);
   }
 }
 
@@ -40,37 +47,37 @@ function handleModalCloseBtnClick() {
   refs.backdrop.classList.toggle('hidden');
   refs.modal.innerHTML = '';
   refs.closeModal.removeEventListener('click', handleModalCloseBtnClick);
+  refs.openTrailer.removeEventListener('click', handleTrailerOpenBtnClick);
 }
 
-async function handleModalImgClick() {
+async function handleTrailerOpenBtnClick() {
+  refs.backdrop.classList.toggle('hidden');
   refs.videoModal.classList.toggle('hidden');
-  console.log('hi');
-  refs.openVideo.removeEventListener('click', handleModalImgClick);
+
+  refs.closeVideo.addEventListener('click', handleCloseVideoClick);
 
   try {
-    const { data } = await theMovieDbAPI.fetchFullFilmInfo();
-    //  renderFullInfoModal(data);
+    const { data } = await theMovieDbAPI.fetchFilmVideo(filmId);
+    renderTrailer(data);
   } catch (error) {
     onFetchError;
   }
-
-  refs.closeVideo.addEventListener('click', handleCloseVideoClick);
 }
 
 function handleCloseVideoClick() {
+  refs.trailerWrap.innerHTML = '';
   refs.videoModal.classList.toggle('hidden');
+  refs.backdrop.classList.toggle('hidden');
   refs.closeVideo.removeEventListener('click', handleCloseVideoClick);
 }
-
-// function onFetchSuccess(data) {
-// }
 
 function onFetchError(err) {
   console.warn(err);
 }
 
 function renderGalleryCards(data) {
-  console.log(data.results);
+  populareFilms = data.results;
+
   refs.openModal.insertAdjacentHTML(
     'beforeend',
     filmCardTemplate(data.results)
@@ -78,7 +85,30 @@ function renderGalleryCards(data) {
 }
 
 function renderFullInfoModal(data) {
-  console.log(data);
+  searchFilm = data;
+
   refs.modal.insertAdjacentHTML('beforeend', modalTemplate(data));
   refs.openVideo.addEventListener('click', handleModalImgClick);
+  refs.watched.addEventListener('click', handleWatchedBtnClick);
+  refs.queue.addEventListener('click', handleQueueBtnClick);
+}
+
+function renderTrailer(data) {
+  const key = findTrailerById(data);
+  refs.trailerWrap.insertAdjacentHTML('beforeend', trailerTemplate(key));
+}
+
+function handleWatchedBtnClick() {
+  console.log('watched');
+}
+
+function handleQueueBtnClick() {
+  console.log('queue');
+}
+
+function findTrailerById(data) {
+  console.log(data.results);
+
+  const key = data.results[3].key;
+  return key;
 }

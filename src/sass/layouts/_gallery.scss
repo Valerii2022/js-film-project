@@ -1,83 +1,84 @@
 .gallery {
-   display: flex;
-   flex-wrap: wrap;
-   gap: 20px;
-   margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
 
-   @include tablet {
-      gap: 32px;
-      margin-bottom: 60px;
-   }
-   @include desktop {
-      gap: 15px;
-   }
+  @include tablet {
+    gap: 32px;
+    margin-bottom: 60px;
+  }
+  @include desktop {
+    gap: 15px;
+  }
 
-   &__item {
-      width: 280px;
-      cursor: pointer;
+  &__item {
+    position: relative;
+    width: 280px;
+    cursor: pointer;
 
-      @include tablet {
-         width: 336px;
-      }
+    @include tablet {
+      width: 336px;
+    }
 
-      @include desktop {
-         width: 395px;
-         margin-bottom: 16px;
-      }
-   }
+    @include desktop {
+      width: 395px;
+      margin-bottom: 16px;
+    }
+  }
 
-   &__img {
-      width: 100%;
-      margin-bottom: 10px;
+  &__img {
+    width: 100%;
+    margin-bottom: 10px;
 
-      border-radius: 5px;
-      display: block;
+    border-radius: 5px;
+    display: block;
 
-      @include tablet {
-         margin-bottom: 8px;
-      }
+    @include tablet {
+      margin-bottom: 8px;
+    }
 
-      @include desktop {
-         margin-bottom: 12px;
-      }
-   }
+    @include desktop {
+      margin-bottom: 12px;
+    }
+  }
 
-   &__name {
-      margin-bottom: 5px;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 1.17;
-      text-transform: uppercase;
+  &__name {
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    text-transform: uppercase;
 
-      color: var(--primary-text-color);
+    color: var(--primary-text-color);
 
-      @include tablet {
-         margin-bottom: 4px;
-         line-height: 1.33;
-      }
-
-      @include desktop {
-         margin-bottom: 6px;
-         font-size: 20px;
-         line-height: 1.2;
-      }
-   }
-
-   &__info {
-      font-weight: 500;
-      font-size: 12px;
+    @include tablet {
+      margin-bottom: 4px;
       line-height: 1.33;
+    }
 
-      color: var(--accent-text-color);
+    @include desktop {
+      margin-bottom: 6px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+  }
 
-      @include desktop {
-         font-size: 20px;
-         line-height: 1.2;
-      }
-   }
+  &__info {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
 
-   &__genre::after {
-      content: "|";
-      padding: 0 2px;
-   }
+    color: var(--accent-text-color);
+
+    @include desktop {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+  }
+
+  &__genre::after {
+    content: '|';
+    padding: 0 2px;
+  }
 }
