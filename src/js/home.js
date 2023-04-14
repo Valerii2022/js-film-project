@@ -40,6 +40,8 @@ async function handleCardsClick(evt) {
 
     refs.closeModal.addEventListener('click', handleModalCloseBtnClick);
     refs.openTrailer.addEventListener('click', handleTrailerOpenBtnClick);
+    refs.addQueue.addEventListener('click', addFilmToQueueStorale);
+    refs.addWatched.addEventListener('click', addFilmToWatchedStorale);
   }
 }
 
@@ -48,6 +50,8 @@ function handleModalCloseBtnClick() {
   refs.modal.innerHTML = '';
   refs.closeModal.removeEventListener('click', handleModalCloseBtnClick);
   refs.openTrailer.removeEventListener('click', handleTrailerOpenBtnClick);
+  refs.addQueue.removeEventListener('click', addFilmToQueueStorale);
+  refs.addWatched.removeEventListener('click', addFilmToWatchedStorale);
 }
 
 async function handleTrailerOpenBtnClick() {
@@ -89,8 +93,8 @@ function renderFullInfoModal(data) {
 
   refs.modal.insertAdjacentHTML('beforeend', modalTemplate(data));
   refs.openVideo.addEventListener('click', handleModalImgClick);
-  refs.watched.addEventListener('click', handleWatchedBtnClick);
-  refs.queue.addEventListener('click', handleQueueBtnClick);
+  refs.addWatched.addEventListener('click', handleWatchedBtnClick);
+  refs.addQueue.addEventListener('click', handleQueueBtnClick);
 }
 
 function renderTrailer(data) {
@@ -98,13 +102,17 @@ function renderTrailer(data) {
   refs.trailerWrap.insertAdjacentHTML('beforeend', trailerTemplate(key));
 }
 
-function handleWatchedBtnClick() {
-  console.log('watched');
+function addFilmToWatchedStorale() {
+  const watchedStorage = [JSON.parse(localStorage.getItem('watched'))];
+  console.log(watchedStorage);
+
+  const updateWatched = watchedStorage.push(searchFilm);
+  console.log(updateWatched);
+
+  localStorage.setItem('watched', JSON.stringify(updateWatched));
 }
 
-function handleQueueBtnClick() {
-  console.log('queue');
-}
+function addFilmToQueueStorale() {}
 
 function findTrailerById(data) {
   console.log(data.results);

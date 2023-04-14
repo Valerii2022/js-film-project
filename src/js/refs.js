@@ -12,6 +12,6 @@ export const refs = {
   trailerWrap: document.querySelector('.trailer__inner'),
   closeVideo: document.querySelector('[data-video-close]'),
   modal: document.querySelector('.backdrop__card'),
-  watched: document.querySelector('[data-watched-btn]'),
-  queue: document.querySelector('[data-queue-btn]'),
+  addWatched: document.querySelector('[data-watched-btn]'),
+  addQueue: document.querySelector('[data-queue-btn]'),
 };
