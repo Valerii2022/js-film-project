@@ -40,8 +40,8 @@ async function handleCardsClick(evt) {
 
     refs.closeModal.addEventListener('click', handleModalCloseBtnClick);
     refs.openTrailer.addEventListener('click', handleTrailerOpenBtnClick);
-    refs.addQueue.addEventListener('click', addFilmToQueueStorale);
-    refs.addWatched.addEventListener('click', addFilmToWatchedStorale);
+    refs.addQueue.addEventListener('click', addFilmToQueueStorage);
+    refs.addWatched.addEventListener('click', addFilmToWatchedStorage);
   }
 }
 
@@ -50,8 +50,8 @@ function handleModalCloseBtnClick() {
   refs.modal.innerHTML = '';
   refs.closeModal.removeEventListener('click', handleModalCloseBtnClick);
   refs.openTrailer.removeEventListener('click', handleTrailerOpenBtnClick);
-  refs.addQueue.removeEventListener('click', addFilmToQueueStorale);
-  refs.addWatched.removeEventListener('click', addFilmToWatchedStorale);
+  refs.addQueue.removeEventListener('click', addFilmToQueueStorage);
+  refs.addWatched.removeEventListener('click', addFilmToWatchedStorage);
 }
 
 async function handleTrailerOpenBtnClick() {
@@ -102,7 +102,7 @@ function renderTrailer(data) {
   refs.trailerWrap.insertAdjacentHTML('beforeend', trailerTemplate(key));
 }
 
-function addFilmToWatchedStorale() {
+function addFilmToWatchedStorage() {
   const watchedStorage = [JSON.parse(localStorage.getItem('watched'))];
   console.log(watchedStorage);
 
@@ -112,7 +112,7 @@ function addFilmToWatchedStorale() {
   localStorage.setItem('watched', JSON.stringify(updateWatched));
 }
 
-function addFilmToQueueStorale() {}
+function addFilmToQueueStorage() {}
 
 function findTrailerById(data) {
   console.log(data.results);
